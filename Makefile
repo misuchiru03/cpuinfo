@@ -1,6 +1,13 @@
 all: cpuinfo
 
 cpuinfo: cpuinfo.c
-	$(CC) $(CFLAGS)-o $@ $<
+        $(CC) $(CFLAGS)-o $@ $<
 
-clean: rm -f cpuinfo
+install:
+        cp cpuinfo /usr/local/bin/
+
+uninstall:
+        rm -f /usr/local/bin/cpuinfo
+
+clean:
+        rm -f cpuinfo
